@@ -1,21 +1,13 @@
 # simon
 Simple Experiment Manager
 
-Ideas: 
+Simon is designed to be a super lightweight and nearly invisible tool for helping to organize experiment results and configuration.  
 
-0.  Simon is initialized with a base directory.  
-1.  For each experiment, creates a new directory, named using both the time of experiment creation and (optionally) an additional name.  
-2.  Gives a function for logging.  These logged values are randomly printed at a constant rate, and all stored to a logfile.
-3.  User can request the experiment directory name.  
-4.  Saving/loading capability?  Should it help with loading model file for past experiment?  Maybe have some capability for this.  
+Currently it works like this: 
 
-import simon
+1.  Every time you start an experiment, Simon creates a results directory for that experiment.   
+2.  Simon looks up and saves the current commit of the git repository.  
+3.  Simon makes it so that "print" statements are printed to standard out and also saved to a log file.  
+4.  Simon lets you write to the log file without printing to standard out.  
 
-mysimon = simon("/tmp/", name = "mytest")
-
-for i in range(0,100000):
-  mysimon.log(i)
-  
-print mysimon.dir
-#/tmp/20150101_mytest/
-
+I made this package because I usually end up rewriting these pieces of code for every machine learning project that I do.  

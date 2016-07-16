@@ -63,6 +63,8 @@ class simon(object):
         self.terminal.write(message)
         self.log.write(message)
 
+    def flush(self):
+        pass
 
     def log(self, message):
         self.log.write(message)

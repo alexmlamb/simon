@@ -8,8 +8,8 @@ import datetime
 
 import random
 
-class simon(object):
-    def __init__(self, folder, name = "nameless", filename="Default.log"):
+class Simon(object):
+    def __init__(self, folder, name = "nameless"):
 
         self.terminal = sys.stdout
 
@@ -64,7 +64,7 @@ class simon(object):
         self.log.write(message)
 
     def flush(self):
-        pass
+        self.terminal.flush()
 
     def log(self, message):
         self.log.write(message)

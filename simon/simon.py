@@ -8,10 +8,11 @@ import datetime
 
 import random
 
-class Simon(object):
+class simon(object):
     def __init__(self, folder, name = "nameless"):
 
         self.terminal = sys.stdout
+        self.error_terminal = sys.stderr
 
         if folder[-1] != "/":
             folder = folder + "/"
@@ -30,6 +31,7 @@ class Simon(object):
         self.log = open(self.filename, "a")
 
         sys.stdout = self
+        sys.stderr = self
 
         try:
 

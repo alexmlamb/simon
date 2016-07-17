@@ -8,4 +8,4 @@ setup(name='simon',
       author_email='gward@python.net',
       url='https://www.python.org/sigs/distutils-sig/',
       packages=['simon'],
-     )
+      )

@@ -12,7 +12,6 @@ class simon(object):
     def __init__(self, folder, name = "nameless"):
 
         self.terminal = sys.stdout
-        self.error_terminal = sys.stderr
 
         if folder[-1] != "/":
             folder = folder + "/"
@@ -28,10 +27,9 @@ class simon(object):
 
         self.filename = self.experiment_dir + "log.txt"
 
-        self.log = open(self.filename, "a")
+        self.logobj = open(self.filename, "w")
 
         sys.stdout = self
-        sys.stderr = self
 
         try:
 
@@ -63,13 +61,15 @@ class simon(object):
 
     def write(self, message):
         self.terminal.write(message)
-        self.log.write(message)
+        self.logobj.write(message)
+        self.flush()
 
     def flush(self):
         self.terminal.flush()
+        self.logobj.flush()
 
     def log(self, message):
-        self.log.write(message)
+        self.logobj.write(message)
 
 
 

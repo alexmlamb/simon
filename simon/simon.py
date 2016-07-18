@@ -52,7 +52,7 @@ class simon(object):
 
         print "[logging info]"
         print "\tExperiment Directory", os.path.abspath(self.experiment_dir)
-
+        print "\tLog Location", "less " + os.path.abspath(self.experiment_dir) + "/log.txt"
 
         if using_git:
             print "[git info]"
